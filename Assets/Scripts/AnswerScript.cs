@@ -19,7 +19,7 @@ public class AnswerScript : MonoBehaviour
         {
             Debug.Log("Wrong Answer");
              quizManager = GameObject.Find("GameController").GetComponent<QuizManager>();
-            quizManager.Correct();
+            quizManager.Wrong();
         }
     }
 
