@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class QuizManager : MonoBehaviour
 {
+    public LevelDataOfProgramming[] allLevel;
     public List<QuestionAnswer> QusAns;//Array list of all possible question
     public GameObject[] options;
     public int currentQuestion;
@@ -16,6 +17,7 @@ public class QuizManager : MonoBehaviour
     public int score;
    private void Start()
    {
+        //DontDestroyedOnLoad(gameObject);
         totalQuestion = QusAns.Count;
         statusPanel.SetActive(false);
         GenerateQuestion();
@@ -54,7 +56,7 @@ public class QuizManager : MonoBehaviour
             {
                 options[i].GetComponent<AnswerScript>().isCorrect = true;
             }
-      }
+        }
     }
 
    public void GenerateQuestion() //Generate question to display
@@ -78,4 +80,9 @@ public class QuizManager : MonoBehaviour
 
    }
 
+
+    ///public LevelDataOfProgramming GetLevelData()
+   // {
+    //    return allLevel[0];
+    //}
 }
